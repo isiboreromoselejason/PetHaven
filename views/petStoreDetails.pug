@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Pet Store Details - Pet Haven
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    header
+      h1 Pet Store Details
+    main
+      h2= details.name
+      p Address: #{details.formatted_address}
+      p Rating: #{details.rating}
+      p Total Reviews: #{details.user_ratings_total}
+    footer
+      p &copy; 2024 Pet Haven

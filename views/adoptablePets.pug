@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Adoptable Pets - Pet Haven
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    header
+      h1 Adoptable Pets
+    main
+      each pet in pets
+        h2= pet.name
+        p Species: #{pet.species}
+        p Breed: #{pet.breeds.primary}
+        p Age: #{pet.age}
+        p Gender: #{pet.gender}
+    footer
+      p &copy; 2024 Pet Haven
