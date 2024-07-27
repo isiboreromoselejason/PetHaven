@@ -1,7 +1,7 @@
-const { getPetfinderData } = require('../models/apiUtils');
+const { getAdoptAPetData } = require('../models/apiUtils');
 
 const renderAdoptablePetsPage = async (req, res) => {
-  const data = await getPetfinderData('animals');
+  const data = await getAdoptAPetData('animals');
   res.render('adoptablePets', { pets: data.animals });
 };
 

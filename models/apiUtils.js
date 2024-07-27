@@ -10,10 +10,10 @@ const getGoogleMapsData = async (query) => {
   return response.data;
 };
 
-const getPetfinderData = async (endpoint) => {
-  const response = await axios.get(`https://api.petfinder.com/v2/${endpoint}`, {
+const getAdoptAPetData = async () => {
+  const response = await axios.get('https://api.adoptapet.com/v1/pets', {
     headers: {
-      Authorization: `Bearer ${process.env.PETFINDER_API_KEY}`,
+      Authorization: `Bearer ${process.env.ADOPT_A_PET_API_KEY}`,
     },
   });
   return response.data;
@@ -21,5 +21,5 @@ const getPetfinderData = async (endpoint) => {
 
 module.exports = {
   getGoogleMapsData,
-  getPetfinderData,
+  getAdoptAPetData,
 };
