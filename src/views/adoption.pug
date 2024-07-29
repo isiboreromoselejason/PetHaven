@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Pet Haven - Adoption Center Details
+    link(rel="stylesheet" href="/css/styles.css")
+  body
+    header
+      h1 Pet Haven
+    main
+      h2= center.name
+      p Address: #{center.address}
+      p Phone: #{center.phone}
+      p Website:
+        a(href=center.website, target="_blank") #{center.website}
+      if center.photos
+        img(src=center.photos[0].url, alt="Center Photo")
+      p Description: #{center.description}
+    script(src="/js/main.js")

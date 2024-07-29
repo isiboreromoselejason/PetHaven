@@ -1,0 +1,5 @@
+module.exports = {
+    FOURSQUARE_API_KEY: process.env.FOURSQUARE_API_KEY,
+    OPENWEATHERMAP_API_KEY: process.env.OPENWEATHERMAP_API_KEY,
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
+  };

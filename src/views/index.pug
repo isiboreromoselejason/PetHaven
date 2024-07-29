@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Pet Haven - Home
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    header
+      h1 Pet Haven
+    main
+      form(id="searchForm")
+        input(type="text" id="searchQuery" placeholder="Search for pet stores, veterinary clinics, etc.")
+        button(type="submit") Search
+      if weather
+        div#weather
+          h2 Current Weather
+          p Temperature: #{(weather.main.temp - 273.15).toFixed(1)}°C
+          p Weather: #{weather.weather[0].description}
+          p Humidity: #{weather.main.humidity}%
+          p Wind Speed: #{weather.wind.speed} m/s
+      if error
+        p.error #{error}
+    script(src="/js/main.js")

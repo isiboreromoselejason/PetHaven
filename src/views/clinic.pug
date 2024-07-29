@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Pet Haven - Veterinary Clinic Details
+    link(rel="stylesheet" href="/css/styles.css")
+  body
+    header
+      h1 Pet Haven
+    main
+      h2= clinic.name
+      p Address: #{clinic.address}
+      p Phone: #{clinic.phone}
+      p Website:
+        a(href=clinic.website, target="_blank") #{clinic.website}
+      if clinic.photos
+        img(src=clinic.photos[0].url, alt="Clinic Photo")
+      p Description: #{clinic.description}
+    script(src="/js/main.js")
