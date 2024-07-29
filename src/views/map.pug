@@ -1,23 +1,24 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Pet Haven - Map
-    script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}`)
-    link(rel="stylesheet" href="/css/styles.css")
-  body
-    header
-      h1 Pet Haven
-    main
-      h2 Pet-Friendly Locations
-      #map(style="height: 500px; width: 100%;")
-      if locations
-        ul
-          each location in locations
-            li
-              h3= location.name
-              p= location.location.address
-      if error
-        p.error #{error}
-    script(src="/js/map.js")
+extends index
+
+block scripts
+  link(rel="stylesheet" href="/css/styles.css")
+  script(src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxoKH92uxe8-YmZZ4mwSiJWZbU9nBdSU&libraries=places&callback=initMap` async defer)
+
+block main-content
+  h2 Pet-Friendly Locations
+  #map(style="height: 500px; width: 100%;")
+  if locations
+    ul
+      each location in locations
+        li
+          h3= location.name
+          p= location.location.address
+          p= location.description
+  if error
+    p.error #{error}
+
+block footer
+  // Render locations as a JSON object
+  script.
+    window.locations = !{JSON.stringify(locations || [])};
+  script(src="/js/map.js")

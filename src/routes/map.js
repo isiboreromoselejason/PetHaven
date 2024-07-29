@@ -8,16 +8,17 @@ router.get('/', async (req, res) => {
   const { query } = req.query;
   if (query) {
     try {
-      const response = await axios.get(`https://api.foursquare.com/v3/places/search`, {
+      const response = await axios.get('https://api.foursquare.com/v3/places/search', {
         params: {
           query: query,
-          near: 'Your Location',
           limit: 10
         },
         headers: {
-          Authorization: `Bearer ${FOURSQUARE_API_KEY}`
+          accept: 'application/json',
+          Authorization: FOURSQUARE_API_KEY
         }
       });
+      console.log(response.data.results[0]);
       res.render('map', { locations: response.data.results });
     } catch (error) {
       console.error('Error fetching Foursquare data:', error);

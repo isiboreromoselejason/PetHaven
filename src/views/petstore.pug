@@ -1,20 +1,17 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Pet Haven - Pet Store Details
-    link(rel="stylesheet" href="/css/styles.css")
-  body
-    header
-      h1 Pet Haven
-    main
-      h2= store.name
-      p Address: #{store.address}
-      p Phone: #{store.phone}
-      p Website: 
-        a(href=store.website, target="_blank") #{store.website}
-      if store.photos
-        img(src=store.photos[0].url, alt="Store Photo")
-      p Description: #{store.description}
-    script(src="/js/main.js")
+extends index
+
+block scripts
+  link(rel="stylesheet" href="/css/styles.css")
+
+block main-content
+  h2= store.name
+  p Address: #{store.address}
+  p Phone: #{store.phone}
+  p Website:
+    a(href=store.website, target="_blank") #{store.website}
+  if store.photos
+    img(src=store.photos[0].url, alt="Store Photo")
+  p Description: #{store.description}
+
+block footer
+  script(src="/js/main.js")

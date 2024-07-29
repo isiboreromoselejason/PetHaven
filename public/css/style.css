@@ -1,41 +1,72 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
 header {
-  background-color: #4CAF50;
+  background-color: #009688;
   color: white;
-  padding: 1em;
+  padding: 1.5em 0;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+/* Main Content */
 main {
-  padding: 1em;
+  padding: 2em;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Styling */
 form {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 input[type="text"] {
-  padding: 0.5em;
-  margin-right: 0.5em;
+  width: calc(100% - 12em);
+  padding: 0.75em;
+  margin-right: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
 }
 
 button {
-  padding: 0.5em 1em;
-  background-color: #4CAF50;
+  padding: 0.75em 2em;
+  background-color: #009688;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #00796b;
 }
 
+/* Error Message */
 #error {
   color: red;
+  font-weight: bold;
+  margin-top: 1em;
 }
