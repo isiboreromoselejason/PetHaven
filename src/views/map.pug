@@ -1,7 +1,7 @@
 extends index
 
 block scripts
-  link(rel="stylesheet" href="/css/styles.css")
+  link(rel="stylesheet" href="/css/style.css")
   script(src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxoKH92uxe8-YmZZ4mwSiJWZbU9nBdSU&libraries=places&callback=initMap` async defer)
 
 block main-content
@@ -18,6 +18,15 @@ block main-content
     p.error #{error}
 
 block footer
+block footer
+  footer
+      p &copy; 2024 Pet Haven. All rights reserved.
+        nav
+        a(href="/about") About Us
+        span |
+        a(href="/contact") Contact
+        span |
+        a(href="/privacy") Privacy Policy
   // Render locations as a JSON object
   script.
     window.locations = !{JSON.stringify(locations || [])};
