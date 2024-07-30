@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   color: #333;
 }
 
-/* Header */
+
 header {
   background-color: #009688;
   color: white;
@@ -26,7 +26,7 @@ header h1 {
   margin: 0;
 }
 
-/* Main Content */
+
 main {
   padding: 2em;
   max-width: 900px;
@@ -36,7 +36,7 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styling */
+
 form {
   margin-bottom: 2em;
 }
@@ -64,7 +64,7 @@ button:hover {
   background-color: #00796b;
 }
 
-/* Error Message */
+
 #error {
   color: red;
   font-weight: bold;
